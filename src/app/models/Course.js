@@ -1,5 +1,5 @@
-const mongooes = require('mongoose')
-const Schema = mongooes.Schema
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const Course = new Schema({
     name: { type: String, maxLength: 255 },
@@ -10,3 +10,4 @@ const Course = new Schema({
 
 })
 
+module.exports = mongoose.model('Course', Course)
