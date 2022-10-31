@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Blog chan</a>
+
+  <div class="container container-fluid">
+    <a class="navbar-brand" href="/">Blog chan</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -13,14 +14,36 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://cdna.artstation.com/p/assets/images/images/003/174/392/large/phong-anh-loli-ruri.jpg?1470645858"
+              alt=""
+              class="user-ava"
+            />
+            Nguyen
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/courses/create">Upload course</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="/me/stored/courses">Your courses</a></li>
+            <li><a class="dropdown-item" href="/me/stored/news">My blogs</a></li>
+
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Log out</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
+
       </ul>
     </div>
   </div>
+
 </nav>
