@@ -1,4 +1,5 @@
 <div class="mt-4">
+
   <h3>YOUR COURSES</h3>
   <table class="table mt-4">
     <thead>
@@ -23,7 +24,9 @@
               data-bs-toggle="modal"
               data-bs-target="#exampleModal"
               data-id="{{this._id}}"
+              data-bs-whatever="@fat"
             >Delete</a>
+
           </td>
         </tr>
       {{/each}}
@@ -31,6 +34,7 @@
   </table>
 </div>
 
+{{! modal }}
 <div
   class="modal fade"
   id="exampleModal"
@@ -53,23 +57,31 @@
         This behaviour can not be undone, do you wish to continue?
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger">Delete</button>
+        <button
+          onclick="test()"
+          type="button"
+          class="btn btn-danger"
+        >Delete</button>
         <button
           type="button"
           class="btn btn-secondary"
           data-bs-dismiss="modal"
         >Cancel</button>
+
       </div>
     </div>
   </div>
+
 </div>
 
+{{! hidden delete form }}
+<form id="delete-course-form" method="POST"></form>
+
 <script>
-  const exampleModal = document.getElementById('exampleModal');
+  var courseID; var deleteForm = document.getElementById('delete-course-form');
+  function test(){deleteForm.action = '/courses/' + courseID +
+  '?_method=DELETE'; deleteForm.submit()} const exampleModal =
+  document.getElementById('exampleModal');
   exampleModal.addEventListener('show.bs.modal', event => { const button =
-  event.relatedTarget; const recipient =
-  button.getAttribute('data-bs-whatever'); const modalTitle =
-  exampleModal.querySelector('.modal-title'); const modalBodyInput =
-  exampleModal.querySelector('.modal-body input'); modalTitle.textContent = `New
-  message to ${recipient}`; modalBodyInput.value = recipient; })
+  event.relatedTarget; courseID = button.getAttribute('data-id'); });
 </script>
