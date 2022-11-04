@@ -1,6 +1,9 @@
 <div class="mt-4">
 
-  <h3>YOUR COURSES</h3>
+  <div>
+    <h3>YOUR COURSES</h3>
+    <a href="/me/trash/courses">Archived courses</a>
+  </div>
   <table class="table mt-4">
     <thead>
       <tr>
@@ -27,6 +30,13 @@
               data-bs-whatever="@fat"
             >Delete</a>
 
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="5">
+            Oops! Look like you dont have any course yet.
+            <a href="/courses/create"> Upload course</a>
           </td>
         </tr>
       {{/each}}
