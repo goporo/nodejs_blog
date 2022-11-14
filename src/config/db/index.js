@@ -5,6 +5,7 @@ async function connect() {
         await mongoose.connect('mongodb://localhost:27017/blog_education_dev', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
+            family: 4, // ? ipv4 ipv6
         });
         console.log("connected mongoose")
     }
